@@ -32,7 +32,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.PUT;
         methods = {POST, GET, OPTIONS, PUT, DELETE, PATCH},
         maxAge = 3600,
         allowedHeaders = {"x-requested-with", "origin", "content-type", "accept"},
-        origins = "*"
+        originPatterns = "*"
 )
 @RequestMapping("/api/v1/todos/")
 public class TodoRestController {
