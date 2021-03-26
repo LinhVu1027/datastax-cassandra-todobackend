@@ -59,7 +59,7 @@ public class TodoRestController {
         return ResponseEntity.created(new URI(newTodo.getUrl())).body(newTodo);
     }
 
-    @PatchMapping("{uid}")
+    @PatchMapping("/{uid}")
     public ResponseEntity<Todo> update(HttpServletRequest req, @PathVariable(value = "uid") String uid, @RequestBody Todo todoReq)
             throws URISyntaxException {
         if (!todoStore.containsKey(UUID.fromString(uid))) {
@@ -78,7 +78,7 @@ public class TodoRestController {
         return ResponseEntity.accepted().body(existingTodo);
     }
 
-    @DeleteMapping("{uid}")
+    @DeleteMapping("/{uid}")
     public ResponseEntity<Void> deleteById(@PathVariable(value = "uid") String uid) {
         if (!todoStore.containsKey(UUID.fromString(uid))) {
             return ResponseEntity.notFound().build();
