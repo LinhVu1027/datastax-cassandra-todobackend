@@ -31,7 +31,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 @CrossOrigin(
         methods = {POST, GET, OPTIONS, PUT, DELETE, PATCH},
         maxAge = 3600,
-        allowedHeaders = {"x-requested-with", "origin", "content-type", "accept"},
+        allowedHeaders = "*",
         originPatterns = "*"
 )
 @RequestMapping("/api/v1/todos/")
